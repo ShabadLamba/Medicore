@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Medicore</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=heading>
+  <h1>Medicore</h1>
+  <div class=data>
+    <form action="{{ url_for('MedinceSuggestions') }}" method=post class=add-entry>
+      <dl>
+        <dt>Name of the Medicine:
+        <dd><input type=text size=30 name=text>
+        <dd><input type=submit value=submit>
+      </dl>
+    </form>
+  </div>
+</div>

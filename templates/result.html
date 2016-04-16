@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Medicore</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=heading>
+  <h1>Medicore</h1>
+  <ul class=text>
+  {{ medicineList }}
+    {# medicine #}
+  {# else #}
+    <li><em>{#Sorry, don't have any suggestions.#}</em>
+  {# endfor #}
+  </ul>
+  
+</div>

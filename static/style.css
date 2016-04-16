@@ -1,0 +1,30 @@
+.data {
+    border: 0px solid grey;
+    margin-left: 250px;
+    margin-right: 250px;
+    background-color: transparent;
+    font-size: 25px;
+    color: #4F3F3F
+    /* #6D9FFF */
+}
+
+.heading {
+ 	color:#666;
+ 	font-size:36px;
+ 	text-align: center;
+}
+
+.flash  {
+	background: #cee5F5; padding: 0.5em;
+	border: 1px solid #aacbe2; 
+}
+
+.page {
+
+}
+
+#text {
+	font-size: 16px;
+	font-family: Helvetica neue;
+	color: #999;
+}
