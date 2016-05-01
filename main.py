@@ -2,6 +2,7 @@ import requests
 from flask import Flask, request, g, redirect, url_for, render_template
 import json
 from re import sub
+import medcinefunc
 
 DEBUG = True
 SECRET_KEY = 'development key'
@@ -12,7 +13,7 @@ PASSWORD = 'default'
 #url for medicine suggestions
 url = "http://www.truemd.in/api/medicine_suggestions/"
 
-#url for alternatives of a mdicine
+# url for alternatives of a mdicine
 # url = "http://www.truemd.in/api/medicine_alternatives/"
 
 #api key
@@ -35,26 +36,32 @@ def MedinceSuggestions():
 		}
 		medicineList = get_Data(Parameters)
 		print medicineList
-		return redirect(url_for('show_entries', medicineList=medicineList))
+		medicineAlternatives = medcinefunc.MedicineAlternatives(medicineList)
+		return redirect(url_for('show_entries', medicineList=medicineAlternatives))
 	
 	return render_template('medicore.html')#, medicineList = medicineList)
 # for medicines in Data["response"]["medicine_alternatives"]:
 # 	print medicines.key() + " : " + medicines.value()
 
-def get_Data(Parameters):
+def get_Data(searchString):
 	medicineData = []
-	Response = requests.get(url, params=Parameters).content
+	Response = requests.get(url, params=searchString).content
 	Data = json.loads(Response)
 	print Data
 	for suggestion in Data["response"]["suggestions"]:
 		medicineData.append(sub(r"[^\x00-\x7F]+","",suggestion["suggestion"]))
-	print "1"
-	print medicineData
+	# print "1"
+	# print medicineData
 	return medicineData
+
+# def get_med_details(listOfMedinceNames):
+
+# def get_med_alternate(listOfMedinceNames):
+
 
 @app.route('/result/<medicineList>')
 def show_entries(medicineList):
-	print type(medicineList)
+	# print type(medicineList)
 	medicineList = "".join(medicineList)
 	print "".join("".join(medicineList))
 	return render_template('result.html',medicineList=medicineList)

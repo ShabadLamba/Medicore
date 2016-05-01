@@ -1,14 +1,206 @@
-<!doctype html>
-<title>Medicore</title>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-<div class=heading>
-  <h1>Medicore</h1>
-  <ul class=text>
+<!DOCTYPE html>
+<title>MED_DB</title>
+<head></head>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300">
+<style>
+    #main_title{
+        margin-top: 10px;
+        margin-left:3px;
+        margin-bottom: 10px;
+        height:60px;
+        vertical-align: middle;
+        line-height: 60px;
+        padding: 10px;
+        padding-bottom: 5px;
+        
+
+    }  
+    
+    a:link{
+        text-decoration: none;
+    }
+    
+    h1{
+        color:black;
+        margin:0px; 
+        margin-left:45px;
+        margin-top:-72px;
+        text-align: left;
+        vertical-align: middle;
+        line-height: 30px;
+        font-family: "Open Sans","sans serif";
+        font-size: 25px;
+        font-weight: 900;
+        
+    }
+    h2{
+        
+        margin-top:-5px;
+        margin-left:47px;
+        text-align: left;
+        height:30px;
+        vertical-align: middle;
+        line-height: 30px;
+        font-family: "Open Sans","sans serif";
+        font-size: 12px;
+        color:#737373;
+        
+    }
+    
+    hr{
+        display: block;
+        width: 100%;
+        color: darkgreen;
+        margin-top:15px;
+        margin-left:0px;
+    }
+    
+    #bar{
+        margin-top:-63px;
+        padding:0px;
+        margin-left:150px;
+        margin-right: 0px;
+        height:40px;
+    }
+    
+    #bar ul li{
+        display:inline;
+        padding-left: 88px;
+    }
+    
+    #bar ul li a{
+        font-family:"Open Sans","sans-serif";
+        font-weight: 900;
+        color:black;
+        text-decoration: none;
+    }
+    
+    form{
+        margin:0px;
+        font-family: "Open Sans","sans-serif";
+        font-size: 22px;
+        
+        height:30px;
+        margin-top:-165px;
+        margin-left:-30px;  
+        padding-left:30%;
+    }
+    
+    img{
+        height:50px;      
+    }
+    #show{
+        margin:100px;
+        height:100px;
+        font-family: "Open Sans","sans-serif";
+        font-size:15px;
+        color:darkblue;
+    }
+    
+    #main_body{
+        margin-top:-10px;
+        text-align: center;
+        height:700px;
+        vertical-align: middle;
+        font-family: "Lucida Grande";
+        font-size:25px;
+        font-weight: 900;
+ 
+    }
+    
+    #frm{ 
+        width:38px;
+        height:34px;
+     
+        margin:0px;
+        background-color:white;
+        border-radius: 1px;
+        margin-left: -36px;
+        margin-top: 0.15px;
+        border:1px solid lightgray;
+        background-image: url(search1.png);
+        background-repeat: no-repeat;
+        background-size: 35px 35px;
+        background-position:center  ;
+        
+        position: relative;
+        float:left;
+        
+    }
+    #txtbx{
+        margin: 0px;
+        font-family: "Open Sans","sans serif";
+        font-size:18px;
+        height:32px;
+        width:450px;
+        margin-left:35px;
+        padding:0px;
+        padding-right:40px;
+        position:relative;
+        float: left;
+        border:1px solid lightgray;
+    }
+   
+    body{
+        background-image: url(pills2.jpg);
+       
+        background-size: auto 820px;     
+        background-repeat: no-repeat;
+    }   
+</style>
+
+
+<body>
+    <div id="main_title">
+        
+        <a href="#"><img src="meds.jpg"></a>
+        <a href="#"><h1 href="#">MEDiSEARCH</h1></a>
+       
+        <a href="#"><h2 href="#">Availability, price and alternatives</h2></a>
+       
+        <div id="bar">
+            <ul>
+                <li><a href="#" onmouseover="func(this)" onmouseout="fun(this)">HOME</a></li>
+                <li><a>LINK1</a></li>
+                <li><a>LINK2</a></li>
+                <li><a>LINK3</a></li>
+                <li><a>LINK4</a></li>
+                <li><a>LINK5</a></li>
+               
+                <li><a href="contact_us.html" onmouseover="func(this)" onmouseout="fun(this)">CONTACT US</a></li>
+            </ul>
+        </div>
+        
+    </div>
+    
+    <div id="main_body">
+     
+    <ul>
   {{ medicineList }}
     {# medicine #}
   {# else #}
     <li><em>{#Sorry, don't have any suggestions.#}</em>
   {# endfor #}
-  </ul>
+  	</ul>
   
-</div>
+    
+    </div>
+  
+    <script>
+        function func(x){
+            x.style.color="#6f6f6f";
+        }
+        function fun(x){
+            x.style.color="black";
+        }
+        function bgin(x){
+            x.style.backgroundColor="#ededed";
+        }
+        function bgout(x){
+            x.style.backgroundColor="white";
+        }
+    </script>  
+    
+</body>
+
+</html>
